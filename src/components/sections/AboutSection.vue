@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-6">
           <p>
-            En la Ponchera Los Pérez, somos tu aliado confiable para el cuidado y mantenimiento de neumáticos en Santa Clara, Villa Clara, Cuba.
+            En la Ponchera Los Pérez, somos tu aliado confiable para el cuidado y mantenimiento de neumáticos en Cuba.
           </p>
           <p>
             Con años de experiencia, nos especializamos en la reparación y el trabajo con todo tipo de gomas, llantas y rines para vehículos ligeros y pesados. Nuestro equipo de especialistas altamente calificados garantiza un servicio de primera, utilizando técnicas avanzadas y herramientas de precisión para asegurar la seguridad y el rendimiento óptimo de tus neumáticos.
