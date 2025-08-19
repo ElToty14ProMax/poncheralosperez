@@ -1,9 +1,9 @@
 <template>
   <section id="hero" class="hero-section d-flex align-items-center justify-content-center text-white text-center py-5">
     <div class="container">
-      <h1 class="display-3 font-weight-bold mb-3">Ponchera Los Pérez</h1>
-      <p class="lead mb-4">Expertos en neumáticos para todo tipo de vehículos.</p>
-      <router-link to="/#services" class="btn btn-warning btn-lg">Servicios</router-link>
+      <h1 class="display-3 font-weight-bold mb-3">Tu viaje, nuestra prioridad</h1>
+      <p class="lead mb-4">Servicio de calidad y confianza para tus neumáticos.</p>
+      <router-link to="/prices" class="btn btn-warning btn-lg">Catálogo</router-link>
     </div>
   </section>
 </template>

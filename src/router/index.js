@@ -7,6 +7,11 @@ const routes = [
     component: () => import('@/views/HomeView.vue')
   },
   {
+    path: '/prices',
+    name: 'prices',
+    component: () => import('@/views/PricesView.vue')
+  },
+  {
     path: '/home',
     redirect: '/'
   }
