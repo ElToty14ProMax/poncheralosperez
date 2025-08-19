@@ -1,7 +1,7 @@
 <template>
     <section id="prices" class="prices-section py-5 bg-dark text-white">
       <div class="container">
-        <h2 class="text-center mb-5 text-warning">Nuestros Precios y Ofertas</h2>
+        <h2 class="text-center mb-5 text-warning"><br>Nuestros Precios y Ofertas</h2>
         
         <div class="row">
           <!-- Columna 1: Rines Urbanos -->
