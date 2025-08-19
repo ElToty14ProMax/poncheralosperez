@@ -11,7 +11,7 @@
               <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R12-R15</th>
                     <th>R16-R18</th>
                     <th>R19-R20</th>
@@ -48,7 +48,7 @@
               <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R12C-R15C</th>
                     <th>R16C-R18C</th>
                   </tr>
@@ -81,7 +81,7 @@
               <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R17A/T-R18A/T</th>
                     <th>R19A/T-R20A/T</th>
                   </tr>
@@ -114,7 +114,7 @@
               <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R21-R24</th>
                   </tr>
                 </thead>
@@ -140,7 +140,7 @@
         <!-- Trabajos Aplicados -->
         <h3 class="text-center text-warning mt-5 mb-4">Trabajos Aplicados</h3>
         <div class="row justify-content-center">
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="table-responsive mb-4">
               <table class="table table-bordered table-dark table-striped text-center text-white">
                 <thead>
@@ -151,43 +151,43 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Remasado</td>
+                    <td class="trabajo-name">Remasado</td>
                     <td>0.50 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche Steelman</td>
+                    <td class="trabajo-name">Parche Steelman</td>
                     <td>2 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche Radial</td>
+                    <td class="trabajo-name">Parche Radial</td>
                     <td>1 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado 100mm</td>
+                    <td class="trabajo-name">Parche reforzado 100mm</td>
                     <td>3 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado 115mm</td>
+                    <td class="trabajo-name">Parche reforzado 115mm</td>
                     <td>5 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado Traktor</td>
+                    <td class="trabajo-name">Parche reforzado Traktor</td>
                     <td>7 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado Cuadrado</td>
+                    <td class="trabajo-name">Parche reforzado Cuadrado</td>
                     <td>8 USD</td>
                   </tr>
                   <tr>
-                    <td>Válvula Estándar</td>
+                    <td class="trabajo-name">Válvula Estándar</td>
                     <td>1.10 USD</td>
                   </tr>
                   <tr>
-                    <td>Válvula para sensores</td>
+                    <td class="trabajo-name">Válvula para sensores</td>
                     <td>4 USD</td>
                   </tr>
                   <tr>
-                    <td>Sustitución de Sensores</td>
+                    <td class="trabajo-name">Sustitución de Sensores</td>
                     <td>1.50 USD</td>
                   </tr>
                 </tbody>
@@ -226,8 +226,14 @@
   
   .service-name {
     background-color: #3a3a3a !important;
-    font-weight: bold;
+    /*font-weight: bold;*/
     text-align: left !important;
+    padding-left: 10px !important;
+  }
+  .trabajo-name {
+    background-color: #3a3a3a !important;
+    /*font-weight: bold;*/
+    text-align: center !important;
     padding-left: 10px !important;
   }
   

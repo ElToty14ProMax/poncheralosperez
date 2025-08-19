@@ -1,17 +1,17 @@
 <template>
-    <div class="prices-view bg-dark text-white py-5">
+    <section id="prices" class="prices-section py-5 bg-dark text-white">
       <div class="container">
-        <h1 class="text-center mb-5 text-warning">Catálogo de Precios</h1>
-  
+        <h2 class="text-center mb-5 text-warning">Nuestros Precios y Ofertas</h2>
+        
         <div class="row">
           <!-- Columna 1: Rines Urbanos -->
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines Urbanos</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center price-table">
+              <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R12-R15</th>
                     <th>R16-R18</th>
                     <th>R19-R20</th>
@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Montado y Desmontado (USD)</td>
+                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
                     <td>0.30 USD</td>
                     <td>0.60 USD</td>
                     <td>1.00 USD</td>
@@ -45,17 +45,17 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines de Carga</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center price-table">
+              <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R12C-R15C</th>
                     <th>R16C-R18C</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Montado y Desmontado (USD)</td>
+                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
                     <td>0.50 USD</td>
                     <td>1.00 USD</td>
                   </tr>
@@ -78,17 +78,17 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines All Terrain A/T</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center price-table">
+              <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R17A/T-R18A/T</th>
                     <th>R19A/T-R20A/T</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Montado y Desmontado (USD)</td>
+                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
                     <td>1.00 USD</td>
                     <td>1.50 USD</td>
                   </tr>
@@ -111,16 +111,16 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines Especiales</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center price-table">
+              <table class="table table-bordered table-dark table-striped text-center">
                 <thead>
                   <tr>
-                    <th>Rin</th>
+                    <th>Servicio</th>
                     <th>R21-R24</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Montado y Desmontado (USD)</td>
+                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
                     <td>2.00 USD</td>
                   </tr>
                   <tr>
@@ -140,9 +140,9 @@
         <!-- Trabajos Aplicados -->
         <h3 class="text-center text-warning mt-5 mb-4">Trabajos Aplicados</h3>
         <div class="row justify-content-center">
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="table-responsive mb-4">
-              <table class="table table-bordered table-dark table-striped text-center text-white price-table">
+              <table class="table table-bordered table-dark table-striped text-center text-white">
                 <thead>
                   <tr>
                     <th>Trabajo aplicado</th>
@@ -151,43 +151,43 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Remasado</td>
+                    <td class="trabajo-name">Remasado</td>
                     <td>0.50 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche Steelman</td>
+                    <td class="trabajo-name">Parche Steelman</td>
                     <td>2 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche Radial</td>
+                    <td class="trabajo-name">Parche Radial</td>
                     <td>1 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado 100mm</td>
+                    <td class="trabajo-name">Parche reforzado 100mm</td>
                     <td>3 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado 115mm</td>
+                    <td class="trabajo-name">Parche reforzado 115mm</td>
                     <td>5 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado Traktor</td>
+                    <td class="trabajo-name">Parche reforzado Traktor</td>
                     <td>7 USD</td>
                   </tr>
                   <tr>
-                    <td>Parche reforzado Cuadrado</td>
+                    <td class="trabajo-name">Parche reforzado Cuadrado</td>
                     <td>8 USD</td>
                   </tr>
                   <tr>
-                    <td>Válvula Estándar</td>
+                    <td class="trabajo-name">Válvula Estándar</td>
                     <td>1.10 USD</td>
                   </tr>
                   <tr>
-                    <td>Válvula para sensores</td>
+                    <td class="trabajo-name">Válvula para sensores</td>
                     <td>4 USD</td>
                   </tr>
                   <tr>
-                    <td>Sustitución de Sensores</td>
+                    <td class="trabajo-name">Sustitución de Sensores</td>
                     <td>1.50 USD</td>
                   </tr>
                 </tbody>
@@ -197,7 +197,7 @@
         </div>
   
       </div>
-    </div>
+    </section>
   </template>
   
   <script setup>
@@ -205,28 +205,13 @@
   </script>
   
   <style scoped>
-  .prices-view {
-    min-height: 100vh;
-    background-color: #000 !important;
-    color: white;
-    padding: 80px 20px;
+  .prices-section {
+    background-color: #212121 !important;
+    padding: 100px 20px;
   }
   
   .text-warning {
     color: #ff8c00 !important;
-  }
-  
-  .table {
-    background-color: #333;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .table thead th {
-    background-color: #ff8c00;
-    color: #000;
-    border-color: #ff8c00;
-    font-weight: bold;
   }
   
   .table-bordered {
@@ -241,59 +226,25 @@
   
   .service-name {
     background-color: #3a3a3a !important;
-    font-weight: bold;
+    /*font-weight: bold;*/
     text-align: left !important;
     padding-left: 10px !important;
   }
-  
-  .price-table th,
-  .price-table td {
-    vertical-align: middle;
+  .trabajo-name {
+    background-color: #3a3a3a !important;
+    /*font-weight: bold;*/
+    text-align: center !important;
+    padding-left: 10px !important;
   }
   
-  @media (max-width: 767.98px) {
-    .table-responsive {
-      border: 1px solid #ff8c00;
-      border-radius: 8px;
-    }
+  .table th {
+    background-color: #ff8c00 !important;
+    color: #000 !important;
+    font-weight: bold;
+  }
   
-    .price-table thead {
-      display: none;
-    }
-  
-    .price-table tbody,
-    .price-table tr,
-    .price-table td {
-      display: block;
-      width: 100%;
-    }
-  
-    .price-table tr {
-      margin-bottom: 1rem;
-      border: 1px solid #ff8c00;
-      border-radius: 8px;
-      padding: 0.5rem;
-    }
-  
-    .price-table td {
-      text-align: right;
-      padding-left: 50%;
-      position: relative;
-    }
-  
-    .price-table td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 6px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
-      text-align: left;
-      font-weight: bold;
-      color: #ff8c00;
-    }
-  
-    .col-lg-6 {
+  @media (max-width: 768px) {
+    .col-lg-3 {
       margin-bottom: 2rem;
     }
     
