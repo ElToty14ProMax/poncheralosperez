@@ -6,19 +6,19 @@
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
-              <i class="fas fa-tire-pressure-gauge fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Reparación de Gomas</h5>
-              <p class="card-text">Reparamos todo tipo de pinchazos y daños en neumáticos, asegurando una solución duradera y segura.</p>
-            </div>
+              <i class="fas fa-car fa-3x mb-3 text-warning"></i>  
+  <h5 class="card-title text-warning">Reparación de Gomas</h5>
+  <p class="card-text">Reparamos todo tipo de pinchazos y daños en neumáticos, asegurando una solución duradera y segura.</p>
+</div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
-              <i class="fas fa-car-tire fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Montaje y Desmontaje</h5>
-              <p class="card-text">Servicio profesional de montaje y desmontaje de neumáticos en todo tipo de rines.</p>
-            </div>
+              <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
+  <h5 class="card-title text-warning">Montaje y Desmontaje</h5>
+  <p class="card-text">Servicio profesional de montaje y desmontaje de neumáticos en todo tipo de rines.</p>
+</div>
           </div>
         </div>
         <div class="col">
@@ -43,15 +43,15 @@
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
               <i class="fas fa-motorcycle fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Motos y Bicicletas</h5>
-              <p class="card-text">Ofrecemos servicio especializado para neumáticos de motos y bicicletas, con la misma calidad y atención.</p>
+              <h5 class="card-title text-warning">Motos</h5>
+              <p class="card-text">Ofrecemos servicio especializado para neumáticos de motos, con la misma calidad y atención.</p>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
-              <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
+              <i class="fas fa-cog fa-3x mb-3 text-warning"></i>
               <h5 class="card-title text-warning">Mecánica Ligera</h5>
               <p class="card-text">Servicios básicos de mecánica relacionados con el tren de rodaje y suspensión, garantizando tu seguridad.</p>
             </div>

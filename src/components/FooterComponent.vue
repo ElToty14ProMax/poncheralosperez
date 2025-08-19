@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-dark text-white pt-5 pb-4">
+  <footer id="footer" class="bg-dark text-white pt-5 pb-4">
     <div class="container text-center text-md-left">
       <div class="row text-center text-md-left">
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -91,13 +91,13 @@
                 <a href="https://www.facebook.com/arencey.perez" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-facebook"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-x-twitter"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-google-plus"></i></a>
+                <a href="https://www.instagram.com/arenceyperez/" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-instagram"></i></a>
               </li>
               <li class="list-inline-item">
-                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.google.com/maps/place/Ponchera+los+P%C3%A9rez/@22.4171126,-80.0074266,94m/data=!3m1!1e3!4m15!1m8!3m7!1s0x88cd49070f7a4cb5:0x798cf7529110a41a!2sCuba!3b1!8m2!3d21.521757!4d-77.781167!16zL20vMGQwNHo2!3m5!1s0x88d52f21d901f6b1:0xae04faa456452461!8m2!3d22.4170641!4d-80.0070539!16s%2Fg%2F11rx28b5nc?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="fas fa-map-marker-alt"></i></a>
               </li>
             </ul>
           </div>

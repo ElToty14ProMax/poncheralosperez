@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="hero-section d-flex align-items-center justify-content-center text-white text-center py-5">
     <div class="container">
-      <h1 class="display-3 font-weight-bold mb-3">Tu viaje, nuestra prioridad</h1>
+      <h1 class="display-3 font-weight-bold mb-3">Ruedas Seguras, Viajes Tranquilos</h1>
       <p class="lead mb-4">Servicio de calidad y confianza para tus neumáticos.</p>
       <router-link to="/prices" class="btn btn-warning btn-lg">Catálogo</router-link>
     </div>
@@ -17,7 +17,7 @@
   background: url('@/assets/canva-portfolio.jpg') no-repeat center center/cover;
   height: 100vh; /* Full viewport height */
   position: relative;
-  color: white;
+  color: white; /* Changed text color back to white */
 }
 
 .hero-section::before {
@@ -37,11 +37,13 @@
 
 .display-3 {
   font-size: 3.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Restored text shadow */
+  font-family: 'Arial', sans-serif; /* Kept font family */
 }
 
 .lead {
   font-size: 1.5rem;
+  font-family: 'Arial', sans-serif; /* Kept font family */
 }
 
 .btn-warning {
