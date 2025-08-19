@@ -8,7 +8,7 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines Urbanos</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center">
+              <table class="table table-bordered table-dark text-center">
                 <thead>
                   <tr>
                     <th>Servicio</th>
@@ -19,19 +19,19 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Montado y Desmontado (USD)</td>
                     <td>0.30 USD</td>
                     <td>0.60 USD</td>
                     <td>1.00 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Servicio de Patio (USD)</td>
+                    <td>Servicio de Patio (USD)</td>
                     <td>0.25 USD</td>
                     <td>0.50 USD</td>
                     <td>0.90 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
                     <td>0.50 USD</td>
                     <td>0.80 USD</td>
                     <td>1.25 USD</td>
@@ -45,7 +45,7 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines de Carga</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center">
+              <table class="table table-bordered table-dark text-center">
                 <thead>
                   <tr>
                     <th>Servicio</th>
@@ -55,17 +55,17 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Montado y Desmontado (USD)</td>
                     <td>0.50 USD</td>
                     <td>1.00 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Servicio de Patio (USD)</td>
+                    <td>Servicio de Patio (USD)</td>
                     <td>0.30 USD</td>
                     <td>0.70 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
                     <td>0.75 USD</td>
                     <td>1.00 USD</td>
                   </tr>
@@ -78,7 +78,7 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines All Terrain A/T</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center">
+              <table class="table table-bordered table-dark text-center">
                 <thead>
                   <tr>
                     <th>Servicio</th>
@@ -88,17 +88,17 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Montado y Desmontado (USD)</td>
                     <td>1.00 USD</td>
                     <td>1.50 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Servicio de Patio (USD)</td>
+                    <td>Servicio de Patio (USD)</td>
                     <td>0.50 USD</td>
                     <td>1.00 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
                     <td>1.20 USD</td>
                     <td>1.50 USD</td>
                   </tr>
@@ -111,7 +111,7 @@
           <div class="col-lg-6 col-md-12 mb-4">
             <h4 class="text-warning text-center mb-3">Rines Especiales</h4>
             <div class="table-responsive">
-              <table class="table table-bordered table-dark table-striped text-center">
+              <table class="table table-bordered table-dark text-center">
                 <thead>
                   <tr>
                     <th>Servicio</th>
@@ -120,15 +120,15 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="service-name">Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Montado y Desmontado (USD)</td>
                     <td>2.00 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Servicio de Patio (USD)</td>
+                    <td>Servicio de Patio (USD)</td>
                     <td>1.50 USD</td>
                   </tr>
                   <tr>
-                    <td class="service-name">Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
                     <td>2.50 USD</td>
                   </tr>
                 </tbody>
@@ -142,7 +142,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-4">
             <div class="table-responsive mb-4">
-              <table class="table table-bordered table-dark table-striped text-center text-white">
+              <table class="table table-bordered table-dark text-center text-white">
                 <thead>
                   <tr>
                     <th>Trabajo aplicado</th>
@@ -151,43 +151,43 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="trabajo-name">Remasado</td>
+                    <td>Remasado</td>
                     <td>0.50 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche Steelman</td>
+                    <td>Parche Steelman</td>
                     <td>2 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche Radial</td>
+                    <td>Parche Radial</td>
                     <td>1 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche reforzado 100mm</td>
+                    <td>Parche reforzado 100mm</td>
                     <td>3 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche reforzado 115mm</td>
+                    <td>Parche reforzado 115mm</td>
                     <td>5 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche reforzado Traktor</td>
+                    <td>Parche reforzado Traktor</td>
                     <td>7 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Parche reforzado Cuadrado</td>
+                    <td>Parche reforzado Cuadrado</td>
                     <td>8 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Válvula Estándar</td>
+                    <td>Válvula Estándar</td>
                     <td>1.10 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Válvula para sensores</td>
+                    <td>Válvula para sensores</td>
                     <td>4 USD</td>
                   </tr>
                   <tr>
-                    <td class="trabajo-name">Sustitución de Sensores</td>
+                    <td>Sustitución de Sensores</td>
                     <td>1.50 USD</td>
                   </tr>
                 </tbody>
@@ -222,24 +222,26 @@
   .table-dark td {
     border-color: #ff8c00 !important;
     font-size: 0.85rem;
+    text-align: center !important; /* Centrado global */
   }
   
-  .service-name {
-    background-color: #3a3a3a !important;
-    /*font-weight: bold;*/
-    text-align: left !important;
-    padding-left: 10px !important;
+  /* Intercalar colores más visibles */
+  .table-dark tbody tr:nth-child(odd) {
+    background-color: #1a1a1a !important; /* negro */
   }
-  .trabajo-name {
-    background-color: #3a3a3a !important;
-    /*font-weight: bold;*/
-    text-align: center !important;
-    padding-left: 10px !important;
+  
+  .table-dark tbody tr:nth-child(even) {
+    background-color: #333333 !important; /* gris más marcado */
+  }
+  
+  .table-dark td,
+  .table-dark th {
+    color: #ffffff !important;
   }
   
   .table th {
     background-color: #ff8c00 !important;
-    color: #000 !important;
+    color: #000000 !important;
     font-weight: bold;
   }
   
@@ -247,7 +249,7 @@
     .col-lg-3 {
       margin-bottom: 2rem;
     }
-    
+  
     .table-dark th,
     .table-dark td {
       font-size: 0.75rem;
@@ -255,3 +257,4 @@
     }
   }
   </style>
+  
