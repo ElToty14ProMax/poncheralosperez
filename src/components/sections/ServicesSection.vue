@@ -2,23 +2,23 @@
   <section id="services" class="services-section py-5 bg-black text-white">
     <div class="container">
       <h2 class="text-center mb-5 text-warning">Nuestros Servicios</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-1 row-cols-md-2 g-4"> <!-- Cambiado a row-cols-md-2 -->
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
               <i class="fas fa-car fa-3x mb-3 text-warning"></i>  
-  <h5 class="card-title text-warning">Reparación de Gomas</h5>
-  <p class="card-text">Reparamos todo tipo de pinchazos y daños en neumáticos, asegurando una solución duradera y segura.</p>
-</div>
+              <h5 class="card-title text-warning">Reparación de Gomas</h5>
+              <p class="card-text">Reparamos todo tipo de pinchazos y daños en neumáticos, asegurando una solución duradera y segura.</p>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
               <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
-  <h5 class="card-title text-warning">Montaje y Desmontaje</h5>
-  <p class="card-text">Servicio profesional de montaje y desmontaje de neumáticos en todo tipo de rines.</p>
-</div>
+              <h5 class="card-title text-warning">Montaje y Desmontaje</h5>
+              <p class="card-text">Servicio profesional de montaje y desmontaje de neumáticos en todo tipo de rines.</p>
+            </div>
           </div>
         </div>
         <div class="col">
@@ -33,27 +33,9 @@
         <div class="col">
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
-              <i class="fas fa-truck fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Servicio para Vehículos Pesados</h5>
-              <p class="card-text">Atendemos camiones, guaguas y otros vehículos de gran porte con soluciones robustas para sus neumáticos.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 bg-dark text-white border-warning">
-            <div class="card-body text-center">
               <i class="fas fa-motorcycle fa-3x mb-3 text-warning"></i>
               <h5 class="card-title text-warning">Motos</h5>
-              <p class="card-text">Ofrecemos servicio especializado para neumáticos de motos, con la misma calidad y atención.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 bg-dark text-white border-warning">
-            <div class="card-body text-center">
-              <i class="fas fa-cog fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Mecánica Ligera</h5>
-              <p class="card-text">Servicios básicos de mecánica relacionados con el tren de rodaje y suspensión, garantizando tu seguridad.</p>
+              <p class="card-text">Ofrecemos servicio especializado para neumáticos de motos de alta cilindrada, con la misma calidad y atención.</p>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@
             <i class="fas fa-home mr-3"></i> Reparto Manuelita. <br>Santa Clara, Villa Clara, Cuba. 
           </p>
           <p>
-            <i class="fas fa-envelope mr-3"></i> arensey@nauta.cu
+            <i class="fas fa-envelope mr-3"></i> arenceyperez@gmail.com
           </p>
           <p>
             <i class="fas fa-phone mr-3"></i> +53 53241835

@@ -25,10 +25,23 @@ const router = createRouter({
       return savedPosition
     }
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth'
-      }
+      return new Promise((resolve) => {
+        // Espera 2 frames para que se estabilice la altura del navbar animado
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            const el = document.querySelector(to.hash)
+            if (el) {
+              const styles = getComputedStyle(document.documentElement)
+              const base = parseInt(styles.getPropertyValue('--navbar-offset')) || 100
+              const extra = parseInt(styles.getPropertyValue('--navbar-offset-extra')) || 12
+              const yOffset = base + extra
+              const y = el.getBoundingClientRect().top + window.pageYOffset - yOffset
+              window.scrollTo({ top: y, behavior: 'smooth' })
+            }
+            resolve()
+          })
+        })
+      })
     }
     return { top: 0, behavior: 'smooth' }
   }

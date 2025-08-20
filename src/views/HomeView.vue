@@ -4,6 +4,8 @@
     <AboutSection />
     <ServicesSection />
     <PricesSection />
+    <StatsSection />
+    <CarouselComponent />
   </div>
 </template>
 
@@ -12,6 +14,8 @@ import HeroSection from '@/components/sections/HeroSection.vue'
 import AboutSection from '@/components/sections/AboutSection.vue'
 import ServicesSection from '@/components/sections/ServicesSection.vue'
 import PricesSection from '@/components/sections/PricesSection.vue'
+import StatsSection from "../components/sections/StatsSection.vue";
+import CarouselComponent from "../components/CarouselComponent.vue";
 </script>
 
 <style scoped>

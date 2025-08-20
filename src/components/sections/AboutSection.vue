@@ -11,7 +11,7 @@
             En la Ponchera Los Pérez, somos tu aliado confiable para el cuidado y mantenimiento de neumáticos en Cuba.
           </p>
           <p>
-            Con años de experiencia, nos especializamos en la reparación y el trabajo con todo tipo de gomas, llantas y rines para vehículos ligeros y pesados. Nuestro equipo de especialistas altamente calificados garantiza un servicio de primera, utilizando técnicas avanzadas y herramientas de precisión para asegurar la seguridad y el rendimiento óptimo de tus neumáticos.
+            Con años de experiencia, nos especializamos en la reparación y el trabajo con todo tipo de gomas, llantas y rines para vehículos ligeros. Nuestro equipo de especialistas altamente calificados garantiza un servicio de primera, utilizando técnicas avanzadas y herramientas de precisión para asegurar la seguridad y el rendimiento óptimo de tus neumáticos.
           </p>
           <p>
             Estamos ubicados en el <em>Reparto Manuelita, Santa Clara, Villa Clara, Cuba</em>.  

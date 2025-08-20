@@ -137,15 +137,15 @@
           </div>
         </div>
   
-        <!-- Trabajos Aplicados -->
-        <h3 class="text-center text-warning mt-5 mb-4">Trabajos Aplicados</h3>
+        <!-- Reparaciones -->
+        <h3 class="text-center text-warning mt-5 mb-4">Reparaciones</h3>
         <div class="row justify-content-center">
           <div class="col-lg-4">
             <div class="table-responsive mb-4">
               <table class="table table-bordered table-dark text-center text-white">
                 <thead>
                   <tr>
-                    <th>Trabajo aplicado</th>
+                    <th>Reparaciones</th>
                     <th>Precio Unitario (USD)</th>
                   </tr>
                 </thead>
