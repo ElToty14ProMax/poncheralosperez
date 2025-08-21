@@ -10,7 +10,10 @@
         </div>
         
         <!-- Horizontal Hours Info -->
-        <span class="hours-text">Horario: {{ openTime }} - {{ closeTime }}</span>
+        
+          <span v-if = "isSaturday" class="hours-text">HORARIO: {{ openTime }} - {{ closeTimeSaturday }}</span>
+          <span v-else class="hours-text">HORARIO: {{ openTime }} - {{ closeTime }}</span>
+
         
         <!-- Status Badge -->
         <div class="status-badge" :class="statusClass">
@@ -24,10 +27,12 @@
   <script setup>
   import { ref, computed, onMounted, onUnmounted } from 'vue';
   
-  const openHour = 8;   // 8 AM
-  const closeHour = 16;  // 4 PM
-  const openTime = ref('8:00 AM');
-  const closeTime = ref('4:00 PM');
+  const openHour = 7;   // 7 AM
+  const closeHour = 18;  // 6 PM
+  const openTime = ref('7:00 AM');
+  const closeTime = ref('6:00 PM');
+  const closeTimeSaturday = ref('12:00 PM');
+  const isSaturday = ref(false);
   const isOpen = ref(false);
   const status = ref('Cerrado');
   const currentTime = ref(new Date());
@@ -41,24 +46,28 @@
   }));
   
   const checkStatus = () => {
-    const now = new Date();
-    currentTime.value = now;
-    const currentHour = now.getHours();
-    
-    // Check if it's weekend (Saturday = 6, Sunday = 0)
-    const isWeekend = now.getDay() === 0 || now.getDay() === 6;
-    
-    if (isWeekend) {
-      isOpen.value = false;
-      status.value = 'Cerrado - Fin de semana';
-    } else if (currentHour >= openHour && currentHour < closeHour) {
-      isOpen.value = true;
-      status.value = 'Abierto';
-    } else {
-      isOpen.value = false;
-      status.value = 'Cerrado';
-    }
-  };
+  const now = new Date();
+  currentTime.value = now;
+  const currentHour = now.getHours();
+  const currentDay = now.getDay();
+  
+  // Check if it's weekend (Saturday = 6, Sunday = 0)
+  isSaturday.value = currentDay === 6;
+  const isSunday = currentDay === 0;
+  
+  if (isSunday) {
+    isOpen.value = false;
+    status.value = 'Cerrado - Domingo';
+  } else if (isSaturday.value) {
+    // Lógica especial para sábados
+    isOpen.value = currentHour >= openHour && currentHour < 12; // 12 PM es el cierre
+    status.value = isOpen.value ? 'Abierto' : 'Cerrado';
+  } else {
+    // Lógica para días de semana
+    isOpen.value = currentHour >= openHour && currentHour < closeHour;
+    status.value = isOpen.value ? 'Abierto' : 'Cerrado';
+  }
+};
   
   onMounted(() => {
     checkStatus();

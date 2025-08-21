@@ -1,7 +1,7 @@
 <template>
   <div class="carousel-wrapper">
     <div class="carousel-container">
-      <h2 class="carousel-title">Reparaciones</h2>
+      <h2 class="carousel-title">Taller</h2>
       
       <swiper
         :slides-per-view="slidesPerView"
@@ -122,118 +122,90 @@ const breakpoints = {
   }
 };
 
-// Datos de las imágenes (reemplaza con tus rutas reales)
+// Datos de las imágenes (Estas son rutas reales)
 const images = ref([
   { 
-    src: require('@/assets/carrucel2/reparacion1.jpg'), 
-    alt: 'Reparación Image 1',
-    //title: 'Trabajador',
-    //category: 'Interior'
+    src: require('@/assets/carrucel2/taller1.jpg'), 
+    alt: 'Portfolio Image 1',
+    //title: 'Vista Interior 1',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/taller2.jpg'), 
+    alt: 'Portfolio Image 2',
+    //title: 'Vista Interior 2',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/taller4.jpg'), 
+    alt: 'Punching Bag Image 1',
+    //title: 'Trabajadores',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/taller5.jpg'), 
+    alt: 'Punching Bag Image 2',
+    //title: 'Información',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/taller6.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cartel',
+    //category: 'Taller'
   },{ 
-    src: require('@/assets/carrucel2/reparacion2.jpg'), 
-    alt: 'Reparación Image 2',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion3.jpg'), 
-    alt: 'Reparación Image 3',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion4.jpg'), 
-    alt: 'Reparación Image 4',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion5.jpg'), 
-    alt: 'Reparación Image 5',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion6.jpg'), 
-    alt: 'Reparación Image 6',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion7.jpg'), 
-    alt: 'Reparación Image 7',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion8.jpg'), 
-    alt: 'Reparación Image 8',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion9.jpg'), 
-    alt: 'Reparación Image 9',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion10.jpg'), 
-    alt: 'Reparación Image 10',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion11.jpg'), 
-    alt: 'Reparación Image 11',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion12.jpg'), 
-    alt: 'Reparación Image 12',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion13.jpg'), 
-    alt: 'Reparación Image 13',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion14.jpg'), 
-    alt: 'Reparación Image 14',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion15.jpg'), 
-    alt: 'Reparación Image 15',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion16.jpg'), 
-    alt: 'Reparación Image 16',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion17.jpg'), 
-    alt: 'Reparación Image 17',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion18.jpg'), 
-    alt: 'Reparación Image 18',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion19.jpg'), 
-    alt: 'Reparación Image 19',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion20.jpg'), 
-    alt: 'Reparación Image 20',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion21.jpg'), 
-    alt: 'Reparación Image 21',
-    //title: 'Trabajador',
-    //category: 'Interior'
-  },{ 
-    src: require('@/assets/carrucel2/reparacion22.jpg'), 
-    alt: 'Reparación Image 22',
-    //title: 'Trabajador',
-    //category: 'Interior'
+    src: require('@/assets/carrucel2/carro6.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Arensey',
+    //category: 'Propietario'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro1.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cliente',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro2.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cliente',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro3.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cliente',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro4.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cliente',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro5.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cliente',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro7.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cartel',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro8.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cartel',
+    //category: 'Taller'
+  },
+  { 
+    src: require('@/assets/carrucel2/carro9.jpg'), 
+    alt: 'Punching Bag Image 3',
+    //title: 'Cartel',
+    //category: 'Taller'
   }
 ]);
 
@@ -352,7 +324,7 @@ onUnmounted(() => {
 }
 
 .portfolio-slide {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .image-container {
@@ -380,7 +352,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .image-container:hover .portfolio-image {
@@ -745,7 +717,7 @@ onUnmounted(() => {
 
 /* Slide transitions for center focus effect */
 :deep(.swiper-slide) {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   opacity: 0.7;
 }
 

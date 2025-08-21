@@ -102,7 +102,7 @@ const updateParallax = () => {
       }
       
       if (heroContent.value) {
-        const contentSpeed = Math.min(scrollY * 0.2, window.innerHeight * 0.3); // Gentler movement
+        const contentSpeed = Math.min(scrollY * 0.1, window.innerHeight * 0.3); // Gentler movement
         heroContent.value.style.transform = `translateY(-${contentSpeed}px)`;
       }
       
@@ -156,7 +156,7 @@ onMounted(() => {
   
   setTimeout(() => {
     if (ctaWrapper.value) ctaWrapper.value.classList.add('animate-in');
-  }, 3500);
+  }, 1000);
   
   // Add scroll listener
   window.addEventListener('scroll', handleScroll, { passive: true });
@@ -340,7 +340,7 @@ onUnmounted(() => {
 .cta-wrapper {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
 }
 
 .cta-wrapper.animate-in {

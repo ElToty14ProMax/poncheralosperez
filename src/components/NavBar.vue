@@ -1,12 +1,14 @@
 <template>
   <nav class="navbar navbar-expand-lg fixed-top" :class="{ 'scrolled': isScrolled }">
     <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">
         <div class="brand-container">
-          <img src="@/assets/logo.png" alt="Ponchera Los Pérez Logo" class="brand-logo">
-          <span class="brand-text">Ponchera Los Pérez</span>
-        </div>
-      </router-link>
+  <img src="@/assets/logo.png" alt="Ponchera Los Pérez Logo" class="brand-logo">
+  <a href="https://poncheralosperez.netlify.app/" class="brand-text" target="_blank" rel="noopener noreferrer">
+    Ponchera Los Pérez
+  </a>
+</div>
+
+      
       
       <button 
         class="navbar-toggler" 

@@ -4,15 +4,15 @@
       <h2 class="text-center mb-5 text-warning">Sobre Nosotros</h2>
       <div class="row align-items-center">
         <div class="col-md-6 text-center mb-4 mb-md-0">
-          <img src="@/assets/profile.jpg" class="img-fluid rounded shadow" alt="Ponchera Los Pérez">
+          <img src="@/assets/carrucel2/reparacion21.jpg" class="img-fluid rounded shadow" alt="Ponchera Los Pérez">
         </div>
         <div class="col-md-6">
           <p>
-            En la Ponchera Los Pérez, somos tu aliado confiable para el cuidado y mantenimiento de neumáticos en Cuba.
-          </p>
-          <p>
-            Con años de experiencia, nos especializamos en la reparación y el trabajo con todo tipo de gomas, llantas y rines para vehículos ligeros. Nuestro equipo de especialistas altamente calificados garantiza un servicio de primera, utilizando técnicas avanzadas y herramientas de precisión para asegurar la seguridad y el rendimiento óptimo de tus neumáticos.
-          </p>
+    En la Ponchera Los Pérez, nos enorgullecemos de ser tus aliados de confianza para el cuidado integral de tus neumáticos en Cuba. Somos mucho más que un servicio técnico; somos tu garante de seguridad y tranquilidad en cada kilómetro que recorres.
+</p>
+<p>
+  Con años de experiencia, nos especializamos en ofrecer soluciones completas para todo tipo de neumáticos, llantas y rines de vehículos ligeros. Nuestro equipo está formado por especialistas altamente capacitados que combinan el conocimiento tradicional con las técnicas más avanzadas del sector. Utilizamos herramientas de última generación y tecnología de precisión para realizar desde reparaciones urgentes hasta mantenimientos preventivos, garantizando siempre el máximo rendimiento, la durabilidad de tus neumáticos y, lo más importante, tu seguridad vial. Confía en nosotros para mantener tu vehículo en las mejores condiciones.
+</p>
           <p>
             Estamos ubicados en el <em>Reparto Manuelita, Santa Clara, Villa Clara, Cuba</em>.  
             <span class="text-warning">¡Gracias por elegirnos y confiar en nuestros servicios!</span>
@@ -37,8 +37,9 @@
 }
 
 .img-fluid {
-  max-width: 97%;
-  height: auto;
+
+  max-height: 200%;
+  height: 500px;
   border-radius: 12px;
 }
 
