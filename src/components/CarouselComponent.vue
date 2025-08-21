@@ -47,10 +47,7 @@
     <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
       <div class="modal-container" @click.stop>
         <button class="modal-close" @click="closeModal">
-          <svg class="close-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="close-line close-line-1" d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path class="close-line close-line-2" d="M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <span class="close-icon">✕</span>
         </button>
         
         <div class="modal-content"
@@ -62,7 +59,6 @@
               :src="images[currentModalImage].src" 
               :alt="images[currentModalImage].alt"
               class="modal-image"
-              :class="slideDirection"
             />
             <div class="modal-info">
               <h3 v-if="images[currentModalImage].title">{{ images[currentModalImage].title }}</h3>
@@ -70,11 +66,6 @@
               <span class="image-counter">{{ currentModalImage + 1 }} / {{ images.length }}</span>
             </div>
           </div>
-          
-          <!-- Indicador de deslizamiento 
-          <div class="swipe-indicator">
-            <span>← Desliza para navegar →</span>
-          </div>-->
         </div>
       </div>
     </div>
@@ -108,6 +99,13 @@ const slidesPerView = ref(3);
 const isModalOpen = ref(false);
 const currentModalImage = ref(0);
 
+// Variables para touch gestures
+const touchStartX = ref(0);
+const touchStartY = ref(0);
+const touchEndX = ref(0);
+const touchEndY = ref(0);
+const minSwipeDistance = 50; // Distancia mínima para considerar un swipe
+
 // Configuración de Swiper
 const modules = [Navigation, Pagination, Autoplay];
 
@@ -126,9 +124,9 @@ const breakpoints = {
   }
 };
 
-// Datos de las imágenes (reemplaza con tus rutas reales)
+// Datos de las imágenes (Estas son rutas reales)
 const images = ref([
-  { 
+{ 
     src: require('@/assets/carrucel2/reparacion1.jpg'), 
     alt: 'Reparación Image 1',
     //title: 'Trabajador',
@@ -278,6 +276,41 @@ const prevImage = () => {
   }
 };
 
+// Funciones para touch gestures
+const onTouchStart = (event) => {
+  touchStartX.value = event.touches[0].clientX;
+  touchStartY.value = event.touches[0].clientY;
+};
+
+const onTouchMove = (event) => {
+  // Prevenir el scroll vertical mientras se hace swipe horizontal
+  if (Math.abs(event.touches[0].clientX - touchStartX.value) > Math.abs(event.touches[0].clientY - touchStartY.value)) {
+    event.preventDefault();
+  }
+};
+
+const onTouchEnd = (event) => {
+  touchEndX.value = event.changedTouches[0].clientX;
+  touchEndY.value = event.changedTouches[0].clientY;
+  handleSwipe();
+};
+
+const handleSwipe = () => {
+  const deltaX = touchEndX.value - touchStartX.value;
+  const deltaY = touchEndY.value - touchStartY.value;
+  
+  // Verificar si es un swipe horizontal válido
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+    if (deltaX > 0) {
+      // Swipe hacia la derecha - imagen anterior
+      prevImage();
+    } else {
+      // Swipe hacia la izquierda - imagen siguiente
+      nextImage();
+    }
+  }
+};
+
 // Manejo de teclas
 const handleKeyPress = (event) => {
   if (!isModalOpen.value) return;
@@ -356,7 +389,7 @@ onUnmounted(() => {
 }
 
 .portfolio-slide {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .image-container {
@@ -384,7 +417,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .image-container:hover .portfolio-image {
@@ -416,13 +449,6 @@ onUnmounted(() => {
   font-size: 24px;
   color: white;
   font-weight: bold;
-}
-
-.nav-arrow {
-  font-size: 32px;
-  color: white;
-  font-weight: bold;
-  line-height: 1;
 }
 
 .image-container:hover .zoom-icon {
@@ -489,55 +515,23 @@ onUnmounted(() => {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 140, 0, 0.1);
-  border: 2px solid rgba(255, 140, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1001;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(15px);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .modal-close:hover {
   background: rgba(255, 140, 0, 0.2);
   border-color: #ff8c00;
-  transform: scale(1.1) rotate(90deg);
-  box-shadow: 
-    0 12px 48px rgba(255, 140, 0, 0.3),
-    0 0 20px rgba(255, 140, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.close-svg {
-  width: 20px;
-  height: 20px;
-  color: #ff8c00;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover .close-svg {
-  color: #fff;
-}
-
-.close-line {
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-.modal-close:hover .close-line-1 {
-  transform: rotate(45deg) scale(1.1);
-}
-
-.modal-close:hover .close-line-2 {
-  transform: rotate(-45deg) scale(1.1);
+  transform: scale(1.1);
 }
 
 .modal-content {
@@ -571,30 +565,6 @@ onUnmounted(() => {
     0 0 0 1px rgba(255, 140, 0, 0.1);
   animation: zoomIn 0.3s ease;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Animaciones de slide para las imágenes */
-.slide-left {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.slide-right {
-  transform: translateX(100%);
-  opacity: 0;
-}
-
-.slide-in-left {
-  transform: translateX(100%);
-  opacity: 0;
-  animation: slideInFromRight 0.3s ease forwards;
-}
-
-.slide-in-right {
-  transform: translateX(-100%);
-  opacity: 0;
-  animation: slideInFromLeft 0.3s ease forwards;
 }
 
 .modal-info {
@@ -656,28 +626,6 @@ onUnmounted(() => {
 @keyframes pulse {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 /* Swiper Navigation Arrows Styling */
@@ -757,15 +705,10 @@ onUnmounted(() => {
   }
   
   .modal-close {
-    top: 15px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .close-svg {
-    width: 18px;
-    height: 18px;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
   }
   
   .swipe-indicator {
