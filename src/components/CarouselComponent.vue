@@ -47,19 +47,22 @@
     <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
       <div class="modal-container" @click.stop>
         <button class="modal-close" @click="closeModal">
-          <span class="close-icon">✕</span>
+          <svg class="close-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="close-line close-line-1" d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path class="close-line close-line-2" d="M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </button>
         
-        <div class="modal-navigation">
-          <button class="nav-button prev-button" @click="prevImage" :disabled="images.length <= 1">
-            <span class="nav-arrow">‹</span>
-          </button>
-          
+        <div class="modal-content"
+             @touchstart="onTouchStart"
+             @touchmove="onTouchMove"
+             @touchend="onTouchEnd">
           <div class="modal-image-container">
             <img 
               :src="images[currentModalImage].src" 
               :alt="images[currentModalImage].alt"
               class="modal-image"
+              :class="slideDirection"
             />
             <div class="modal-info">
               <h3 v-if="images[currentModalImage].title">{{ images[currentModalImage].title }}</h3>
@@ -68,9 +71,10 @@
             </div>
           </div>
           
-          <button class="nav-button next-button" @click="nextImage" :disabled="images.length <= 1">
-            <span class="nav-arrow">›</span>
-          </button>
+          <!-- Indicador de deslizamiento 
+          <div class="swipe-indicator">
+            <span>← Desliza para navegar →</span>
+          </div>-->
         </div>
       </div>
     </div>
@@ -485,37 +489,8 @@ onUnmounted(() => {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1001;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-  background: rgba(255, 140, 0, 0.2);
-  border-color: #ff8c00;
-  transform: scale(1.1);
-}
-
-.modal-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-}
-
-.nav-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 140, 0, 0.1);
+  border: 2px solid rgba(255, 140, 0, 0.4);
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -523,19 +498,57 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+  z-index: 1001;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.nav-button:hover:not(:disabled) {
+.modal-close:hover {
   background: rgba(255, 140, 0, 0.2);
   border-color: #ff8c00;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 
+    0 12px 48px rgba(255, 140, 0, 0.3),
+    0 0 20px rgba(255, 140, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.nav-button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
+.close-svg {
+  width: 20px;
+  height: 20px;
+  color: #ff8c00;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover .close-svg {
+  color: #fff;
+}
+
+.close-line {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.modal-close:hover .close-line-1 {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.modal-close:hover .close-line-2 {
+  transform: rotate(-45deg) scale(1.1);
+}
+
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .modal-image-container {
@@ -544,7 +557,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: calc(100% - 160px);
+  width: 100%;
   height: 100%;
 }
 
@@ -557,6 +570,31 @@ onUnmounted(() => {
     0 20px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 140, 0, 0.1);
   animation: zoomIn 0.3s ease;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animaciones de slide para las imágenes */
+.slide-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-in-left {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideInFromRight 0.3s ease forwards;
+}
+
+.slide-in-right {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideInFromLeft 0.3s ease forwards;
 }
 
 .modal-info {
@@ -584,6 +622,20 @@ onUnmounted(() => {
   font-weight: 500;
 }
 
+.swipe-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: rgba(255, 140, 0, 0.8);
+  font-size: 0.85rem;
+  animation: pulse 2s infinite;
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -598,6 +650,33 @@ onUnmounted(() => {
   to { 
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -677,34 +756,21 @@ onUnmounted(() => {
     height: 240px;
   }
   
-  .modal-navigation {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .modal-image-container {
-    max-width: 100%;
-    order: 2;
-  }
-  
-  .nav-button {
+  .modal-close {
+    top: 15px;
+    right: 15px;
     width: 50px;
     height: 50px;
   }
   
-  .prev-button {
-    order: 1;
+  .close-svg {
+    width: 18px;
+    height: 18px;
   }
   
-  .next-button {
-    order: 3;
-  }
-  
-  .modal-close {
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
+  .swipe-indicator {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
   
   :deep(.swiper-button-next),
@@ -728,13 +794,10 @@ onUnmounted(() => {
     height: 200px;
   }
   
-  .modal-navigation {
-    gap: 5px;
-  }
-  
-  .nav-button {
-    width: 40px;
-    height: 40px;
+  .swipe-indicator {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    bottom: 15px;
   }
   
   :deep(.swiper-button-next),
@@ -745,7 +808,7 @@ onUnmounted(() => {
 
 /* Slide transitions for center focus effect */
 :deep(.swiper-slide) {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   opacity: 0.7;
 }
 

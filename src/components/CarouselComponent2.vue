@@ -47,7 +47,10 @@
     <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
       <div class="modal-container" @click.stop>
         <button class="modal-close" @click="closeModal">
-          <span class="close-icon">✕</span>
+          <svg class="close-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="close-line close-line-1" d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path class="close-line close-line-2" d="M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </button>
         
         <div class="modal-content"
@@ -59,6 +62,7 @@
               :src="images[currentModalImage].src" 
               :alt="images[currentModalImage].alt"
               class="modal-image"
+              :class="slideDirection"
             />
             <div class="modal-info">
               <h3 v-if="images[currentModalImage].title">{{ images[currentModalImage].title }}</h3>
@@ -66,6 +70,11 @@
               <span class="image-counter">{{ currentModalImage + 1 }} / {{ images.length }}</span>
             </div>
           </div>
+          
+          <!-- Indicador de deslizamiento 
+          <div class="swipe-indicator">
+            <span>← Desliza para navegar →</span>
+          </div>-->
         </div>
       </div>
     </div>
@@ -98,6 +107,10 @@ const slidesPerView = ref(3);
 // Variables para el modal
 const isModalOpen = ref(false);
 const currentModalImage = ref(0);
+
+// Variables para animaciones del modal
+const isTransitioning = ref(false);
+const slideDirection = ref('');
 
 // Variables para touch gestures
 const touchStartX = ref(0);
@@ -233,19 +246,45 @@ const closeModal = () => {
 };
 
 const nextImage = () => {
-  if (currentModalImage.value < images.value.length - 1) {
-    currentModalImage.value++;
-  } else {
-    currentModalImage.value = 0; // Volver al inicio
-  }
+  if (isTransitioning.value) return;
+  
+  isTransitioning.value = true;
+  slideDirection.value = 'slide-left';
+  
+  setTimeout(() => {
+    if (currentModalImage.value < images.value.length - 1) {
+      currentModalImage.value++;
+    } else {
+      currentModalImage.value = 0; // Volver al inicio
+    }
+    slideDirection.value = 'slide-in-right';
+    
+    setTimeout(() => {
+      slideDirection.value = '';
+      isTransitioning.value = false;
+    }, 300);
+  }, 150);
 };
 
 const prevImage = () => {
-  if (currentModalImage.value > 0) {
-    currentModalImage.value--;
-  } else {
-    currentModalImage.value = images.value.length - 1; // Ir al final
-  }
+  if (isTransitioning.value) return;
+  
+  isTransitioning.value = true;
+  slideDirection.value = 'slide-right';
+  
+  setTimeout(() => {
+    if (currentModalImage.value > 0) {
+      currentModalImage.value--;
+    } else {
+      currentModalImage.value = images.value.length - 1; // Ir al final
+    }
+    slideDirection.value = 'slide-in-left';
+    
+    setTimeout(() => {
+      slideDirection.value = '';
+      isTransitioning.value = false;
+    }, 300);
+  }, 150);
 };
 
 // Funciones para touch gestures
@@ -417,12 +456,6 @@ onUnmounted(() => {
   color: white;
 }
 
-.close-icon {
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-}
-
 .image-container:hover .zoom-icon {
   opacity: 1;
 }
@@ -487,23 +520,55 @@ onUnmounted(() => {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 140, 0, 0.1);
+  border: 2px solid rgba(255, 140, 0, 0.4);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1001;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .modal-close:hover {
   background: rgba(255, 140, 0, 0.2);
   border-color: #ff8c00;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 
+    0 12px 48px rgba(255, 140, 0, 0.3),
+    0 0 20px rgba(255, 140, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.close-svg {
+  width: 20px;
+  height: 20px;
+  color: #ff8c00;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover .close-svg {
+  color: #fff;
+}
+
+.close-line {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.modal-close:hover .close-line-1 {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.modal-close:hover .close-line-2 {
+  transform: rotate(-45deg) scale(1.1);
 }
 
 .modal-content {
@@ -537,6 +602,30 @@ onUnmounted(() => {
     0 0 0 1px rgba(255, 140, 0, 0.1);
   animation: zoomIn 0.3s ease;
   pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animaciones de slide para las imágenes */
+.slide-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.slide-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-in-left {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideInFromRight 0.3s ease forwards;
+}
+
+.slide-in-right {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: slideInFromLeft 0.3s ease forwards;
 }
 
 .modal-info {
@@ -598,6 +687,28 @@ onUnmounted(() => {
 @keyframes pulse {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Swiper Navigation Arrows Styling */
@@ -677,10 +788,15 @@ onUnmounted(() => {
   }
   
   .modal-close {
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .close-svg {
+    width: 18px;
+    height: 18px;
   }
   
   .swipe-indicator {
