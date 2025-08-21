@@ -50,11 +50,10 @@
           <span class="close-icon">✕</span>
         </button>
         
-        <div class="modal-navigation">
-          <button class="nav-button prev-button" @click="prevImage" :disabled="images.length <= 1">
-            <span class="nav-arrow">‹</span>
-          </button>
-          
+        <div class="modal-content"
+             @touchstart="onTouchStart"
+             @touchmove="onTouchMove"
+             @touchend="onTouchEnd">
           <div class="modal-image-container">
             <img 
               :src="images[currentModalImage].src" 
@@ -67,10 +66,6 @@
               <span class="image-counter">{{ currentModalImage + 1 }} / {{ images.length }}</span>
             </div>
           </div>
-          
-          <button class="nav-button next-button" @click="nextImage" :disabled="images.length <= 1">
-            <span class="nav-arrow">›</span>
-          </button>
         </div>
       </div>
     </div>
@@ -103,6 +98,13 @@ const slidesPerView = ref(3);
 // Variables para el modal
 const isModalOpen = ref(false);
 const currentModalImage = ref(0);
+
+// Variables para touch gestures
+const touchStartX = ref(0);
+const touchStartY = ref(0);
+const touchEndX = ref(0);
+const touchEndY = ref(0);
+const minSwipeDistance = 50; // Distancia mínima para considerar un swipe
 
 // Configuración de Swiper
 const modules = [Navigation, Pagination, Autoplay];
@@ -246,6 +248,41 @@ const prevImage = () => {
   }
 };
 
+// Funciones para touch gestures
+const onTouchStart = (event) => {
+  touchStartX.value = event.touches[0].clientX;
+  touchStartY.value = event.touches[0].clientY;
+};
+
+const onTouchMove = (event) => {
+  // Prevenir el scroll vertical mientras se hace swipe horizontal
+  if (Math.abs(event.touches[0].clientX - touchStartX.value) > Math.abs(event.touches[0].clientY - touchStartY.value)) {
+    event.preventDefault();
+  }
+};
+
+const onTouchEnd = (event) => {
+  touchEndX.value = event.changedTouches[0].clientX;
+  touchEndY.value = event.changedTouches[0].clientY;
+  handleSwipe();
+};
+
+const handleSwipe = () => {
+  const deltaX = touchEndX.value - touchStartX.value;
+  const deltaY = touchEndY.value - touchStartY.value;
+  
+  // Verificar si es un swipe horizontal válido
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+    if (deltaX > 0) {
+      // Swipe hacia la derecha - imagen anterior
+      prevImage();
+    } else {
+      // Swipe hacia la izquierda - imagen siguiente
+      nextImage();
+    }
+  }
+};
+
 // Manejo de teclas
 const handleKeyPress = (event) => {
   if (!isModalOpen.value) return;
@@ -386,13 +423,6 @@ onUnmounted(() => {
   font-weight: bold;
 }
 
-.nav-arrow {
-  font-size: 32px;
-  color: white;
-  font-weight: bold;
-  line-height: 1;
-}
-
 .image-container:hover .zoom-icon {
   opacity: 1;
 }
@@ -476,38 +506,15 @@ onUnmounted(() => {
   transform: scale(1.1);
 }
 
-.modal-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.modal-content {
   width: 100%;
   height: 100%;
-  gap: 20px;
-}
-
-.nav-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.nav-button:hover:not(:disabled) {
-  background: rgba(255, 140, 0, 0.2);
-  border-color: #ff8c00;
-  transform: scale(1.1);
-}
-
-.nav-button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .modal-image-container {
@@ -516,7 +523,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: calc(100% - 160px);
+  width: 100%;
   height: 100%;
 }
 
@@ -529,6 +536,7 @@ onUnmounted(() => {
     0 20px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 140, 0, 0.1);
   animation: zoomIn 0.3s ease;
+  pointer-events: none;
 }
 
 .modal-info {
@@ -556,6 +564,20 @@ onUnmounted(() => {
   font-weight: 500;
 }
 
+.swipe-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 140, 0, 0.1);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: rgba(255, 140, 0, 0.8);
+  font-size: 0.85rem;
+  animation: pulse 2s infinite;
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -571,6 +593,11 @@ onUnmounted(() => {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 /* Swiper Navigation Arrows Styling */
@@ -649,34 +676,16 @@ onUnmounted(() => {
     height: 240px;
   }
   
-  .modal-navigation {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .modal-image-container {
-    max-width: 100%;
-    order: 2;
-  }
-  
-  .nav-button {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .prev-button {
-    order: 1;
-  }
-  
-  .next-button {
-    order: 3;
-  }
-  
   .modal-close {
     top: 10px;
     right: 10px;
     width: 40px;
     height: 40px;
+  }
+  
+  .swipe-indicator {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
   
   :deep(.swiper-button-next),
@@ -700,13 +709,10 @@ onUnmounted(() => {
     height: 200px;
   }
   
-  .modal-navigation {
-    gap: 5px;
-  }
-  
-  .nav-button {
-    width: 40px;
-    height: 40px;
+  .swipe-indicator {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    bottom: 15px;
   }
   
   :deep(.swiper-button-next),
