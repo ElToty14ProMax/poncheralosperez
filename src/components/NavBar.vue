@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="brand-container">
   <img src="@/assets/logo.png" alt="Ponchera Los Pérez Logo" class="brand-logo">
-  <a href="https://poncheralosperez.netlify.app/" class="brand-text" target="_blank" rel="noopener noreferrer">
+  <a href="https://poncheralosperez.netlify.app/" class="brand-text" rel="noopener noreferrer">
     Ponchera Los Pérez
   </a>
 </div>
