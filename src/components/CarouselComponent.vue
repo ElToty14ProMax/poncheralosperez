@@ -657,7 +657,7 @@ onUnmounted(() => {
 
 /* Swiper Pagination Dots Styling */
 :deep(.swiper-pagination) {
-  bottom: 20px !important;
+  bottom: 1px !important;
 }
 
 :deep(.swiper-pagination-bullet) {
