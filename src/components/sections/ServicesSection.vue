@@ -7,7 +7,7 @@
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
               <i class="fas fa-car fa-3x mb-3 text-warning"></i>  
-              <h5 class="card-title text-warning">Reparación de Gomas</h5>
+              <h5 class="card-title text-warning">Reparación de Neumáticos</h5>
               <p class="card-text">Reparamos todo tipo de pinchazos y daños en neumáticos, asegurando una solución duradera y segura.</p>
             </div>
           </div>
@@ -16,8 +16,8 @@
           <div class="card h-100 bg-dark text-white border-warning">
             <div class="card-body text-center">
               <i class="fas fa-tools fa-3x mb-3 text-warning"></i>
-              <h5 class="card-title text-warning">Montaje y Desmontaje</h5>
-              <p class="card-text">Servicio profesional de montaje y desmontaje de neumáticos en todo tipo de rines.</p>
+              <h5 class="card-title text-warning">Desmonte y Monte</h5>
+              <p class="card-text">Servicio profesional de desmonte y monte de neumáticos en todo tipo de rines.</p>
             </div>
           </div>
         </div>

@@ -7,13 +7,13 @@
           <p>Tu mejor opción para el cuidado de tus neumáticos. Años de experiencia y especialistas calificados.</p>
         </div>
 
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
           <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Servicios</h5>
           <p>
-            <a href="#services" class="text-white" style="text-decoration: none;">Reparación de Gomas</a>
+            <a href="#services" class="text-white" style="text-decoration: none;">Reparación de Neumáticos</a>
           </p>
           <p>
-            <a href="#services" class="text-white" style="text-decoration: none;">Montaje y Desmontaje</a>
+            <a href="#services" class="text-white" style="text-decoration: none;">Desmonte y Monte</a>
           </p>
           <p>
             <a href="#services" class="text-white" style="text-decoration: none;">Balanceo</a>

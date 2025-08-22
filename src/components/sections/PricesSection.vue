@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
                     <td>0.30 USD</td>
                     <td>0.60 USD</td>
                     <td>1.00 USD</td>
@@ -31,7 +31,7 @@
                     <td>0.90 USD</td>
                   </tr>
                   <tr>
-                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Balanceo (USD)</td>
                     <td>0.50 USD</td>
                     <td>0.80 USD</td>
                     <td>1.25 USD</td>
@@ -55,7 +55,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
                     <td>0.50 USD</td>
                     <td>1.00 USD</td>
                   </tr>
@@ -65,7 +65,7 @@
                     <td>0.70 USD</td>
                   </tr>
                   <tr>
-                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Balanceo (USD)</td>
                     <td>0.75 USD</td>
                     <td>1.00 USD</td>
                   </tr>
@@ -82,13 +82,13 @@
                 <thead>
                   <tr>
                     <th>Servicio</th>
-                    <th>R17A/T-R18A/T</th>
-                    <th>R19A/T-R20A/T</th>
+                    <th>R17-R18A/T</th>
+                    <th>R19-R20A/T</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
                     <td>1.00 USD</td>
                     <td>1.50 USD</td>
                   </tr>
@@ -98,7 +98,7 @@
                     <td>1.00 USD</td>
                   </tr>
                   <tr>
-                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Balanceo (USD)</td>
                     <td>1.20 USD</td>
                     <td>1.50 USD</td>
                   </tr>
@@ -120,7 +120,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Montado y Desmontado (USD)</td>
+                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
                     <td>2.00 USD</td>
                   </tr>
                   <tr>
@@ -128,7 +128,7 @@
                     <td>1.50 USD</td>
                   </tr>
                   <tr>
-                    <td>Diagnóstico de Ruedas (Balanceo) (USD)</td>
+                    <td>Balanceo (USD)</td>
                     <td>2.50 USD</td>
                   </tr>
                 </tbody>
