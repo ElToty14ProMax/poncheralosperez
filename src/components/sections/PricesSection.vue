@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
+                    <td>Desmonte y Monte de Neumáticos (USD)</td>
                     <td>0.30 USD</td>
                     <td>0.60 USD</td>
                     <td>1.00 USD</td>
@@ -55,7 +55,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
+                    <td>Desmonte y Monte de Neumáticos (USD)</td>
                     <td>0.50 USD</td>
                     <td>1.00 USD</td>
                   </tr>
@@ -82,13 +82,13 @@
                 <thead>
                   <tr>
                     <th>Servicio</th>
-                    <th>R17-R18A/T</th>
-                    <th>R19-R20A/T</th>
+                    <th>R17A/T-R18A/T</th>
+                    <th>R19A/T-R20A/T</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
+                    <td>Desmonte y Monte de Neumáticos (USD)</td>
                     <td>1.00 USD</td>
                     <td>1.50 USD</td>
                   </tr>
@@ -120,7 +120,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Valor de Desmonte y Monte de Neumáticos (USD)</td>
+                    <td>Desmonte y Monte de Neumáticos (USD)</td>
                     <td>2.00 USD</td>
                   </tr>
                   <tr>
