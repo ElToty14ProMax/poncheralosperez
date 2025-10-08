@@ -152,31 +152,31 @@
                 <tbody>
                   <tr>
                     <td>Remasado</td>
-                    <td>0.50 USD</td>
+                    <td>1.00 USD</td>
                   </tr>
                   <tr>
                     <td>Parche Steelman</td>
-                    <td>2 USD</td>
+                    <td>2.50 USD</td>
                   </tr>
                   <tr>
                     <td>Parche Radial</td>
-                    <td>1 USD</td>
+                    <td>1.50 USD</td>
                   </tr>
                   <tr>
                     <td>Parche reforzado 100mm</td>
-                    <td>3 USD</td>
+                    <td>3.50 USD</td>
                   </tr>
                   <tr>
                     <td>Parche reforzado 115mm</td>
-                    <td>5 USD</td>
+                    <td>5.50 USD</td>
                   </tr>
                   <tr>
                     <td>Parche reforzado Traktor</td>
-                    <td>7 USD</td>
+                    <td>7.50 USD</td>
                   </tr>
                   <tr>
                     <td>Parche reforzado Cuadrado</td>
-                    <td>8 USD</td>
+                    <td>8.50 USD</td>
                   </tr>
                   <tr>
                     <td>Válvula Estándar</td>
