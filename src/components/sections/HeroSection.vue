@@ -191,7 +191,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 120%;
-  background: url('@/assets/canva-portfolio.jpg') no-repeat center center/cover;
+  background: url('@/assets/canva-portfolioOptmimzado.webp') no-repeat center center/cover;
   will-change: transform;
   z-index: 1;
 }
